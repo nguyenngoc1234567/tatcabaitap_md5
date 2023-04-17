@@ -51,7 +51,7 @@ function Home(props) {
                           
                         </a>
                       <br />
-                      <p className="price">{product.price}</p>
+                      <p className="price">{product.price}VNĐ</p>
                       <Link to={'/sanpham/'+product.id} className="btn btn-outline-dark mt-auto">Xem chi tiết</Link>
                     </div>
                   </li>
@@ -88,47 +88,39 @@ function Home(props) {
             <div className="span3 col">
               <div className="block">
                 <ul className="nav nav-list">
-                  <li className="nav-header">SUB CATEGORIES</li>
+                  <li className="nav-header">DANH MỤC PHỤS</li>
                   <li>
-                    <a href="products.php">Nullam semper elementum</a>
+                    <a href="products.php">những nguyên tố khác</a>
                   </li>
                   <li className="active">
-                    <a href="products.php">Phasellus ultricies</a>
+                    <a href="products.php">Những sản Phẩm đình đám </a>
                   </li>
                   <li>
-                    <a href="products.php">Donec laoreet dui</a>
+                    <a href="products.php">Nguyên tố Nullam semper</a>
                   </li>
-                  <li>
-                    <a href="products.php">Nullam semper elementum</a>
-                  </li>
-                  <li>
-                    <a href="products.php">Phasellus ultricies</a>
-                  </li>
-                  <li>
-                    <a href="products.php">Donec laoreet dui</a>
-                  </li>
+                  
                 </ul>
                 <br />
                 <ul className="nav nav-list below">
-                  <li className="nav-header">MANUFACTURES</li>
-                  <li>
-                    <a href="products.php">Adidas</a>
-                  </li>
-                  <li>
-                    <a href="products.php">Nike</a>
-                  </li>
-                  <li>
-                    <a href="products.php">Dunlop</a>
-                  </li>
-                  <li>
-                    <a href="products.php">Yamaha</a>
-                  </li>
-                </ul>
+                 <li className="nav-header">HÃNG XE NỔI TIẾNG</li>
+                 <li>
+                   <a href="products.php">Kawasaki.</a>
+                 </li>
+                 <li>
+                   <a href="products.php">BMW</a>
+                 </li>
+                 <li>
+                   <a href="products.php">Honda.</a>
+                 </li>
+                 <li>
+                   <a href="products.php">Yamaha</a>
+                 </li>
+               </ul>  
               </div>
               <div className="block">
                 <h4 className="title">
                   <span className="pull-left">
-                    <span className="text">Randomize</span>
+                    <span className="text">DANH MỤC PHỤ</span>
                   </span>
                   <span className="pull-right">
                     <a
@@ -152,7 +144,7 @@ function Home(props) {
                             <span className="sale_tag" />{" "}
                             <img
                               alt="website template image"
-                              src="../assets/images/ladies/1.jpg"
+                              src="https://www.motogiare.com/uploads/Harley-Davidson/SporterX1200cCustom/Sporter_zing_1.JPG"
                             />
                             <br />
                             <a href="product-detail.php" className="title">
@@ -176,7 +168,7 @@ function Home(props) {
                           <div className="product-box">
                             <img
                               alt="website template image"
-                              src="../assets/images/ladies/2.jpg"
+                              src="https://carnetwork.s3.ap-southeast-1.amazonaws.com/file/d0bcb19a26224e0cbb69a069cf1d892b.jpg"
                             />
                             <br />
                             <a href="product-detail.php" className="title">
@@ -197,7 +189,7 @@ function Home(props) {
                   </div>
                 </div>
               </div>
-              <div className="block">
+              {/* <div className="block">
                 <h4 className="title">
                   <strong>Best</strong> Seller
                 </h4>
@@ -236,7 +228,7 @@ function Home(props) {
                     </a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

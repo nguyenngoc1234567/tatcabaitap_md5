@@ -7,6 +7,7 @@ import LayoutMaster from '../layouts/LayoutMaster';
 function SanPhamShow(props) {
     const {id} = useParams();
     const [product,setProduct] = useState({});
+    const formattedPrice = product?.price?.toLocaleString('vi-VN') || 'Price not available';
   const image = "http://127.0.0.1:8000/public/assets/product/"
 
     useEffect( () => {
@@ -63,7 +64,7 @@ function SanPhamShow(props) {
                    <br />
                  </address>
                  <h4>
-                   <strong>Price:</strong> <span>{ product.price }</span>
+                   <strong>Price:</strong> <span>{ product.price }VNĐ</span>
                  </h4>
                </div>
                {/* <div className="span5">
@@ -87,7 +88,8 @@ function SanPhamShow(props) {
                <div className="span9">
                  <ul className="nav nav-tabs" id="myTab">
                    <li className="active">
-                     <a href="#home">{ product.description }</a>
+                   <p dangerouslySetInnerHTML={{ __html: product.description }} />
+                     {/* <a href="#home">{ product.description }</a> */}
                    </li>
                    <li>
                      <a href="#profile">Additional Information</a>
@@ -120,37 +122,29 @@ function SanPhamShow(props) {
            <div className="span3 col">
              <div className="block">
                <ul className="nav nav-list">
-                 <li className="nav-header">SUB CATEGORIES</li>
+                 <li className="nav-header">DANH MỤC PHỤ</li>
                  <li>
-                   <a href="products.php">Nullam semper elementum</a>
+                   <a href="products.php">những nguyên tố khác </a>
                  </li>
-                 <li className="active">
-                   <a href="products.php">Phasellus ultricies</a>
-                 </li>
+                
                  <li>
-                   <a href="products.php">Donec laoreet dui</a>
+                   <a href="products.php">Những sản Phẩm đình đám </a>
                  </li>
                  <li>
-                   <a href="products.php">Nullam semper elementum</a>
-                 </li>
-                 <li>
-                   <a href="products.php">Phasellus ultricies</a>
-                 </li>
-                 <li>
-                   <a href="products.php">Donec laoreet dui</a>
+                   <a href="products.php">Nguyên tố Nullam semper</a>
                  </li>
                </ul>
                <br />
                <ul className="nav nav-list below">
-                 <li className="nav-header">MANUFACTURES</li>
+                 <li className="nav-header">HÃNG XE NỔI TIẾNG</li>
                  <li>
-                   <a href="products.php">Adidas</a>
+                   <a href="products.php">Kawasaki.</a>
                  </li>
                  <li>
-                   <a href="products.php">Nike</a>
+                   <a href="products.php">BMW</a>
                  </li>
                  <li>
-                   <a href="products.php">Dunlop</a>
+                   <a href="products.php">Honda.</a>
                  </li>
                  <li>
                    <a href="products.php">Yamaha</a>
@@ -160,7 +154,7 @@ function SanPhamShow(props) {
              <div className="block">
                <h4 className="title">
                  <span className="pull-left">
-                   <span className="text">Randomize</span>
+                   <span className="text">Ngẫu nhiên hóa</span>
                  </span>{" "}
                  <span className="pull-right">
                    <a className="left button" href="#myCarousel" data-slide="prev" />
@@ -177,7 +171,7 @@ function SanPhamShow(props) {
                            <a href="product-detail.php">
                              <img
                                alt="website template image"
-                               src="../assets/images/ladies/7.jpg"
+                               src={`${image}${product.image}`}
                              />
                            </a>
                            <br />
@@ -203,7 +197,7 @@ function SanPhamShow(props) {
                            <a href="product-detail.php">
                              <img
                                alt="website template image"
-                               src="../assets/images/ladies/8.jpg"
+                               src={`${image}${product.image}`}
                              />
                            </a>
                            <br />
@@ -225,9 +219,9 @@ function SanPhamShow(props) {
                  </div>
                </div>
              </div>
-             <div className="block">
+             {/* <div className="block">
                <h4 className="title">
-                 <strong>Best</strong> Seller
+                 <strong>Người bán </strong> hàng giỏi nhất
                </h4>
                <ul className="small-product">
                  <li>
@@ -264,7 +258,7 @@ function SanPhamShow(props) {
                    </a>
                  </li>
                </ul>
-             </div>
+             </div> */}
            </div>
          </div>
        </section>
