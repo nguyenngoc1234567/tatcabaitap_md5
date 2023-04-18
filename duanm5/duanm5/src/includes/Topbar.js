@@ -25,10 +25,10 @@ function Topbar(props) {
                 <a href="/cart">Giỏ hàng </a>
               </li>
               <li>
-                <a href="checkout.php">Thủ tục thanh toán</a>
+                <a href="/checkout">Thủ tục thanh toán</a>
               </li>
               <li>
-                <a href="register.php">Đăng nhập </a>
+                <a href="/login">Đăng nhập </a>
               </li>
             </ul>
           </div>

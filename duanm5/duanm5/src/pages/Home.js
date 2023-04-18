@@ -4,8 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import LayoutMaster from "../layouts/LayoutMaster";
 import Header from "../includes/Header";
 function Home(props) {
+  let { the_key, product } = props;
   const navigate = useNavigate();
-
   const [products, setProducts] = useState([]);
   const image = "http://127.0.0.1:8000/public/assets/product/";
   useEffect(() => {
@@ -34,6 +34,7 @@ function Home(props) {
         <section className="main-content">
           <div className="row">
             <div className="span9">
+              
               <ul className="thumbnails listing-products">
                 {products.map((product, key) => (
                   <li className="span3">
@@ -46,13 +47,17 @@ function Home(props) {
                         />
                       </a>
                       <br />
-                        <a href="" className="title">
-                          {product.name}
-                          
-                        </a>
+                      <a href="" className="title">
+                        {product.name}
+                      </a>
                       <br />
                       <p className="price">{product.price}VNĐ</p>
-                      <Link to={'/sanpham/'+product.id} className="btn btn-outline-dark mt-auto">Xem chi tiết</Link>
+                      <Link
+                        to={"/sanpham/" + product.id}
+                        className="btn btn-outline-dark mt-auto"
+                      >
+                        Xem chi tiết
+                      </Link>
                     </div>
                   </li>
                 ))}
@@ -98,24 +103,23 @@ function Home(props) {
                   <li>
                     <a href="products.php">Nguyên tố Nullam semper</a>
                   </li>
-                  
                 </ul>
                 <br />
                 <ul className="nav nav-list below">
-                 <li className="nav-header">HÃNG XE NỔI TIẾNG</li>
-                 <li>
-                   <a href="products.php">Kawasaki.</a>
-                 </li>
-                 <li>
-                   <a href="products.php">BMW</a>
-                 </li>
-                 <li>
-                   <a href="products.php">Honda.</a>
-                 </li>
-                 <li>
-                   <a href="products.php">Yamaha</a>
-                 </li>
-               </ul>  
+                  <li className="nav-header">HÃNG XE NỔI TIẾNG</li>
+                  <li>
+                    <a href="products.php">Kawasaki.</a>
+                  </li>
+                  <li>
+                    <a href="products.php">BMW</a>
+                  </li>
+                  <li>
+                    <a href="products.php">Honda.</a>
+                  </li>
+                  <li>
+                    <a href="products.php">Yamaha</a>
+                  </li>
+                </ul>
               </div>
               <div className="block">
                 <h4 className="title">
