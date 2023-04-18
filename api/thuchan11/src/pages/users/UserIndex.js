@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
+import UserModel from '../../models/UserModel';
+
+
 class UserIndex extends Component {
     constructor( props ){
         super(props);
@@ -10,36 +13,19 @@ class UserIndex extends Component {
         }
     }
     componentDidMount() {
-        var muasach = new Promise(function(resolve, reject){ 
-            //neu thanh cong
-            // resolve('cuonsach');
-            //that bai
-            reject('thatbai')
-
-        });
-        muasach.then(function(res){
-            console.log(res);
-        })
-        // muasach.then(res => {
-          //  this.setState({ users: res.data });
-       //   })
-        //  .catch(err => {
-        //    throw err;
-       //   });
-        // Method get
-        /*
-        $.ajax({
-            url: 'https://6083df209b2bed00170404a0.mockapi.io/angular/users/',
-            method: 'GET',
-            dataType: 'json',
-            success: function(res){
-                this.setState({ users: res.data });
-            },
-            error: function(err){
-                throw err;
-            }
-        });
-        */
+        var mua_sach = new Promise(function(resolve, reject){
+            // thanh cong gọi đến hàm 
+            resolve('cuon sach');
+            // that bai
+            // reject ('khong co sach');
+         });
+         mua_sach.then(function(data){
+            console.log('then',data);
+         })
+         .catch(data=>{
+            console.log('catch',data);
+         })
+        
         axios
           .get("https://6083df209b2bed00170404a0.mockapi.io/angular/users/")
           .then(res => {
@@ -54,6 +40,7 @@ class UserIndex extends Component {
         return (
             <div>
                 <h1>UserIndex</h1>
+                <Link to={'/users/create' }>thêm</Link>
                 <table border={1} width={'100%'}>
                     <thead>
                         <tr>

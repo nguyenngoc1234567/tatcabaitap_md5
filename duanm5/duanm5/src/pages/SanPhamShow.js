@@ -19,26 +19,7 @@ function SanPhamShow(props) {
         });
     },[] );
     return (
-        // <LayoutMaster>
-        //     <div className="row gx-4 gx-lg-5 align-items-center">
-        //         <div className="col-md-6"><img className="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x700/dee2e6/6c757d.jpg" alt="..." /></div>
-        //         <div className="col-md-6">
-        //             {/* <div className="small mb-1">{ product.category }</div> */}
-        //             <h1 className="display-5 fw-bolder">{ product.name }</h1>
-        //             <div className="fs-5 mb-5">
-        //                 <span>{ product.price }</span>
-        //             </div>
-        //             <p className="lead">{ product.description }</p>
-        //             <div className="d-flex">
-        //                 {/* <input className="form-control text-center me-3" type="number" value={qty} onChange={ handleQty } /> */}
-        //                 {/* <button onClick={ handleAddToCart } className="btn btn-outline-dark flex-shrink-0" type="button">
-        //                     <i className="bi-cart-fill me-1"></i>
-        //                     Add to cart
-        //                 </button> */}
-        //             </div>
-        //         </div>
-        //     </div>
-        // </LayoutMaster>
+       
          <LayoutMaster> 
          <section className="main-content">
          <div className="row">
@@ -64,25 +45,10 @@ function SanPhamShow(props) {
                    <br />
                  </address>
                  <h4>
-                   <strong>Price:</strong> <span>{ product.price }VNĐ</span>
+                   <strong>Price:</strong> <span>{ product.price }</span>
                  </h4>
                </div>
-               {/* <div className="span5">
-                 <form action="#" method="post" className="form-inline">
-                  
-                   <br />
-                   <label className="checkbox">
-                     <input type="checkbox" defaultValue="" />
-                    Lựa chọn của bạn là một sự lựa chọn tuyệt vời 
-                   </label>
-                   <p>&nbsp;</p>
-                   <label>Qty:</label>
-                   <input type="text" className="span1" placeholder={1} />
-                   <button className="btn btn-inverse" type="submit">
-                     Add to cart
-                   </button>
-                 </form>
-               </div> */}
+             
              </div>
              <div className="row">
                <div className="span9">
@@ -219,9 +185,9 @@ function SanPhamShow(props) {
                  </div>
                </div>
              </div>
-             {/* <div className="block">
+             <div className="block">
                <h4 className="title">
-                 <strong>Người bán </strong> hàng giỏi nhất
+                 <strong>Người bán </strong> hàng giỏi nh
                </h4>
                <ul className="small-product">
                  <li>
@@ -258,7 +224,7 @@ function SanPhamShow(props) {
                    </a>
                  </li>
                </ul>
-             </div> */}
+             </div>
            </div>
          </div>
        </section>

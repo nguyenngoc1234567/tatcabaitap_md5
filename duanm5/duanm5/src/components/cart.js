@@ -7,5 +7,4 @@ function cart(props) {
         </div>
     );
 }
-
 export default cart;

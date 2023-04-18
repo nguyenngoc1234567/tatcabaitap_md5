@@ -1,20 +1,49 @@
-import React, { useState } from 'react';
- 
+import React, { useState } from "react";
+
+const getSum = (value1, value2) => {
+  return value1 + value2;
+};
+
 const App = () => {
-  const [counter, setcounter] = useState(0);
- 
+  const [valueOne, setValueOne] = useState("");
+  const [valueTwo, setValueTwo] = useState("");
+  const [sum, setSum] = useState(0);
+
+  const add = () => {
+    const result = getSum(parseFloat(valueOne), parseFloat(valueTwo));
+    setSum(result);
+  };
+
   return (
-    <div>
-      <h1>This is counter app</h1>
-      <div className="counter-value">Count: {counter}</div>
-      <button className="increment" onClick={() => setcounter(counter + 1)}>
-        Increment
+    <form style={{ margin: "20px" }}>
+      <input
+        type="number"
+        data-testid="value-one-input"
+        name="valueOne"
+        value={valueOne}
+        onChange={e => setValueOne(e.target.value)}
+      />
+      <input
+        type="number"
+        data-testid="value-two-input"
+        name="valueTwo"
+        value={valueTwo}
+        onChange={e => setValueTwo(e.target.value)}
+      />
+      <button
+        type="button"
+        data-testid="button-add"
+        onClick={add}
+        aria-label="Add"
+      >
+        Add
       </button>
-      <button className="decrement" onClick={() => setcounter(counter - 1)}>
-        Decrement
-      </button>
-    </div>
+      <p className="result" data-testid="result">
+        Result: {sum}
+      </p>
+    </form>
   );
-}
- 
-export default App
+};
+
+export { getSum };
+export default App;
