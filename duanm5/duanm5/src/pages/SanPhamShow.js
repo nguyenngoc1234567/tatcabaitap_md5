@@ -32,11 +32,30 @@ function SanPhamShow(props) {
       id: id,
       name: product.name,
       price: product.price,
-      qty: qty,
+      qty: qty
     };
-    carts.push(cart);
-    dispatch({ type: SET_CART, payload: carts });
-    navigate("/cart");
+
+    // Thực hiện yêu cầu POST đến đường dẫn API
+    fetch("http://127.0.0.1:8000/api/add_to_cart/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cart),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Xử lý phản hồi thành công
+        console.log(data); // Ví dụ: { message: 'Sản phẩm đã được thêm vào giỏ hàng thành công!' }
+        // Dispatch hành động Redux để cập nhật trạng thái giỏ hàng
+        dispatch({ type: SET_CART, payload: [...carts, cart] });
+        // Điều hướng đến trang giỏ hàng
+        navigate("/cart");
+      })
+      .catch((error) => {
+        // Xử lý phản hồi lỗi
+        console.error(error);
+      });
   };
   const handleQty = (event) => {
     setQty(event.target.value);
@@ -273,6 +292,6 @@ function SanPhamShow(props) {
       </section>
     </LayoutMaster>
   );
-}
+}   
 
 export default SanPhamShow;

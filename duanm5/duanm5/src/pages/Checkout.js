@@ -23,11 +23,9 @@ function Checkout(props) {
             <div className="accordion-inner">
               <div className="row-fluid">
                 <div className="span6">
-                  <h4>New Customer</h4>
+                  <h4>Khách hàng mới</h4>
                   <p>
-                    By creating an account you will be able to shop faster, be
-                    up to date on an order's status, and keep track of the
-                    orders you have previously made.
+                  Bằng cách tạo tài khoản, bạn sẽ có thể mua sắm nhanh hơn, cập nhật trạng thái của đơn hàng và theo dõi các đơn hàng bạn đã thực hiện trước đó.
                   </p>
                   <form action="#" method="post">
                     <fieldset>
@@ -39,56 +37,47 @@ function Checkout(props) {
                           id="register"
                           defaultChecked="checked"
                         />
-                        Register Account
+                        đăng ký tài khoản
                       </label>
                       <label className="radio" htmlFor="guest">
-                        <input
-                          type="radio"
-                          name="account"
-                          defaultValue="guest"
-                          id="guest"
-                        />
-                        Guest Checkout
+                      
+                       
                       </label>
                       <br />
-                      <button
-                        className="btn btn-inverse"
-                        data-toggle="collapse"
-                        data-parent="#collapse2"
-                      >
-                        Continue
-                      </button>
+                      <button className="btn btn-inverse" type="submit" id="checkout">
+                  <a href="/Login">Continue</a>
+                </button>
                     </fieldset>
                   </form>
                 </div>
                 <div className="span6">
-                  <h4>Returning Customer</h4>
-                  <p>I am a returning customer</p>
+                  <h4>Bạn cần đăng nhập</h4>
+                  <p>Khách hàng cũ</p>
                   <form action="#" method="post">
                     <fieldset>
                       <div className="control-group">
-                        <label className="control-label">Username</label>
+                        <label className="control-label">Tên tài khoản </label>
                         <div className="controls">
                           <input
                             type="text"
-                            placeholder="Enter your username"
+                            placeholder="Tên tài khoản"
                             id="username"
                             className="input-xlarge"
                           />
                         </div>
                       </div>
                       <div className="control-group">
-                        <label className="control-label">Password</label>
+                        <label className="control-label">Mật khẩu</label>
                         <div className="controls">
                           <input
                             type="password"
-                            placeholder="Enter your password"
+                            placeholder="Mật khẩu"
                             id="password"
                             className="input-xlarge"
                           />
                         </div>
                       </div>
-                      <button className="btn btn-inverse">Continue</button>
+                      <button className="btn btn-inverse">Đăng nhập</button>
                     </fieldset>
                   </form>
                 </div>

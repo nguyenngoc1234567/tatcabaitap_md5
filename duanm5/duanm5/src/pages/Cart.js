@@ -7,6 +7,9 @@ import CartModel from "../models/CartModel";
 function Cart(props) {
     const image = "http://127.0.0.1:8000/public/assets/product/";
     const [products, setProducts] = useState([]);
+    const totalAll = products.reduce((total, product) => {
+      return total + product.price * product.quantity;
+    }, 0);
         useEffect(() => {
           CartModel.getAll()
               .then((res) => {
@@ -55,7 +58,7 @@ function Cart(props) {
                                     <th>{ product.name }</th>
                                     <th>{ product.price }</th>
                                     <th>{ product.quantity }</th>
-                                    <th>{ product.qty * product.price }</th>
+                                    <th>{ product.quantity * product.price }</th>
                                 </tr>
 
                             ))
@@ -87,11 +90,11 @@ function Cart(props) {
               </label>
               <hr />
               <p className="cart-total right">
-                <strong>tổng thu </strong>:$100.00
+                <strong>Phí dịch vụ </strong>:$100.00
                 <br />
                 <strong>Thuế (17.5%)</strong>: $17.50
                 <br />
-                <strong>Tổng cộng</strong>: $119.50
+                <strong>Tổng thu </strong>{totalAll.toLocaleString()}
                 <br />
               </p>
               <hr />
@@ -103,7 +106,8 @@ function Cart(props) {
                   Continue
                 </button>
                 <button className="btn btn-inverse" type="submit" id="checkout">
-                  Checkout
+                
+                  <a href="/Checkout">Checkout</a>
                 </button>
               </p>
             </div>
