@@ -60,17 +60,17 @@ function ProductEdit(props) {
       >
         {({ errors, touched }) => (
           <Form>
-            <strong>Tên sản phẩm</strong> <br></br>
+            <strong>price</strong> <br></br>
             <Field name="name" /> <br />
             {errors.name && touched.name ? <div>{errors.name}</div> : null}
-            <strong>Giá</strong> <br></br>
+            <strong>price</strong> <br></br>
             <Field name="price" /> <br />
             {errors.price && touched.price ? <div>{errors.price}</div> : null}
-            <strong>Tồn kho</strong> <br></br>
+            <strong>inventory</strong> <br></br>
             <Field name="inventory" /> <br /> <br></br>
-            <strong>Mô tả</strong> <br></br>
+            <strong>description</strong> <br></br>
             <Field name="description" /> <br /> <br></br>
-            <button> Cập nhật </button>
+            <button> updatet </button>
             <a href="/">Hủy</a>
           </Form>
         )}

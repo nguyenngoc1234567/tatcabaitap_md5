@@ -51,24 +51,24 @@ return (
         >
             {({ errors, touched }) => (
                 <Form>
-                    <strong>Tên sản phẩm:</strong><br />
+                    <strong>name:</strong><br />
                     <Field name="name" /> <br />
                     {errors.name && touched.name ? (
                         <div>{errors.name}</div>
                     ) : null}
-                    <strong> giá :</strong><br />
+                    <strong> price :</strong><br />
                     {formData.price}
                     <Field name="price" />
                     {errors.price && touched.price ? (
                         <div>{errors.price}</div>
                     ) : null}<br />
-                    <strong> tồn kho :</strong><br />
+                    <strong>inventory :</strong><br />
                     <Field name="inventory" />
                     {errors.inventory && touched.inventory ? (
                         <div>{errors.inventory}</div>
                     ) : null}
                     {formData.inventory}<br/><br/>
-                    <strong> mô tả:</strong><br />
+                    <strong>description:</strong><br />
                     <Field name="description" />
                     {errors.description && touched.description ? (
                         <div>{errors.description}</div>

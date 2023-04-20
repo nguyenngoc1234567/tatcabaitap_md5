@@ -25,15 +25,15 @@ function ProductShow(props) {
           <td>{product.name}</td>
         </tr>
         <tr>
-          <td>Giá</td>
+          <td>price</td>
           <td>{product.price}</td>
         </tr>
         <tr>
-          <td>Tồn kho</td>
+          <td>inventory</td>
           <td>{product.inventory}</td>
         </tr>
         <tr>
-          <td>Mô tả</td>
+          <td>description</td>
           <td>{product.description}</td>
         </tr>
       </table>

@@ -36,9 +36,9 @@ function Products(props) {
         <thead>
           <tr>
             <th> ID </th>
-            <th> Tên sản phẩm </th>
-            <th> Giá </th>
-            <th> Tồn kho </th>
+            <th> name </th>
+            <th> price </th>
+            <th> inventory </th>
             <th> Action </th>
           </tr>
         </thead>
