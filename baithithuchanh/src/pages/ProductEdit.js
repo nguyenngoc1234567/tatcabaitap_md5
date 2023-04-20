@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import { useNavigate, useParams } from "react-router-dom";
 import * as Yup from "yup";
 import ProductModel from "../models/ProductModel";
+import Swal from "sweetalert2";
 const rules = Yup.object().shape({
   name: Yup.string()
     .required("Truong yeu cau")
@@ -32,6 +33,7 @@ function ProductEdit(props) {
       });
   }, []);
   const handleSubmit = (values) => {
+    handleAddSuccess();
     console.log(values);
     let data = {
       name: values.name,
@@ -41,13 +43,21 @@ function ProductEdit(props) {
     };
     ProductModel.update(id, data)
       .then((res) => {
-        alert("Chỉnh sửa thành công");
+        // alert("Chỉnh sửa thành công");
         navigate("/");
       })
       .catch((err) => {
         throw err;
       });
     // Làm rỗng formik
+  };
+  const handleAddSuccess = () => {
+    Swal.fire({
+      icon: 'success',
+      title: 'chỉ sửa phẩm thành công!',
+      showConfirmButton: false,
+      timer: 1500
+    });
   };
   return (
     <div>

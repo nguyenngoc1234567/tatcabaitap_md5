@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Formik, Form, Field } from "formik";
 import { useNavigate } from 'react-router-dom';
 import * as Yup from "yup";
+import Swal from 'sweetalert2';
 import ProductModel from '../models/ProductModel';
 // import axios from 'axios';
 const rules = Yup.object().shape({
@@ -21,6 +22,7 @@ function ProductAdd(props) {
     const [products, setProducts] = useState([]);
     const [formErrors, setFormErrors] = useState([]);
     const handleSubmit = (values) => {
+        handleAddSuccess();
         console.log(values);
         const fd = new FormData();
         // Tạo data để gửi lên server
@@ -37,6 +39,15 @@ function ProductAdd(props) {
             });
         // Làm rỗng formik
     }
+    
+    const handleAddSuccess = () => {
+        Swal.fire({
+          icon: 'success',
+          title: 'Thêm sản phẩm thành công!',
+          showConfirmButton: false,
+          timer: 1500
+        });
+      };
 return (
     <div>
         <h1>Thêm sản phẩm </h1>
